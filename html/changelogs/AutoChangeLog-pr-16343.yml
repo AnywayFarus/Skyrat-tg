@@ -1,4 +1,4 @@
 author: "SkyratBot"
 delete-after: True
 changes: 
-  - qol: "AIs are now loudmode in binary chat"
+  - bugfix: "Fixed bypassing gasmask FOV."
