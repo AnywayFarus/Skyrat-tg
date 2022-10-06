@@ -1,0 +1,190 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/closed/indestructible/wood,
+/area/centcom/holding/cafedorms)
+"b" = (
+/obj/structure/chair/comfy/black{
+	dir = 8
+	},
+/turf/open/indestructible/hotelwood,
+/area/centcom/holding/cafedorms)
+"i" = (
+/obj/structure/sink/directional/south,
+/obj/structure/mirror{
+	pixel_y = 29
+	},
+/turf/open/indestructible/hoteltile,
+/area/centcom/holding/cafedorms)
+"m" = (
+/obj/structure/table/wood,
+/obj/item/storage/box/donkpockets/donkpocketpizza{
+	pixel_x = 9;
+	pixel_y = 8
+	},
+/obj/item/storage/box/donkpockets,
+/obj/machinery/light/directional/north,
+/turf/open/indestructible/hotelwood,
+/area/centcom/holding/cafedorms)
+"n" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	desc = "A simple drain.";
+	dir = 4;
+	name = "floor drain"
+	},
+/obj/machinery/light/small/directional/east,
+/turf/open/indestructible/hoteltile,
+/area/centcom/holding/cafedorms)
+"u" = (
+/obj/structure/bed,
+/obj/item/bedsheet/random,
+/turf/open/indestructible/hotelwood,
+/area/centcom/holding/cafedorms)
+"w" = (
+/obj/item/kirbyplants/random,
+/turf/open/indestructible/hotelwood,
+/area/centcom/holding/cafedorms)
+"x" = (
+/turf/open/indestructible/hoteltile,
+/area/centcom/holding/cafedorms)
+"y" = (
+/obj/structure/table/reinforced,
+/obj/item/soap/deluxe,
+/turf/open/indestructible/hoteltile,
+/area/centcom/holding/cafedorms)
+"z" = (
+/obj/structure/dresser,
+/turf/open/indestructible/hotelwood,
+/area/centcom/holding/cafedorms)
+"D" = (
+/obj/structure/toilet{
+	pixel_y = 13
+	},
+/turf/open/indestructible/hoteltile,
+/area/centcom/holding/cafedorms)
+"H" = (
+/obj/structure/chair/comfy/black{
+	dir = 4
+	},
+/turf/open/indestructible/hotelwood,
+/area/centcom/holding/cafedorms)
+"I" = (
+/obj/machinery/button/door/directional/west{
+	name = "Lodge Lock";
+	id = "dorm211";
+	specialfunctions = 4;
+	normaldoorcontrol = 1
+	},
+/turf/open/indestructible/hotelwood,
+/area/centcom/holding/cafedorms)
+"J" = (
+/obj/structure/table/wood,
+/obj/machinery/microwave{
+	pixel_y = 7
+	},
+/turf/open/indestructible/hotelwood,
+/area/centcom/holding/cafedorms)
+"L" = (
+/obj/structure/table/wood/fancy,
+/obj/machinery/light/directional/north,
+/obj/item/lipstick/random,
+/turf/open/indestructible/hotelwood,
+/area/centcom/holding/cafedorms)
+"M" = (
+/turf/open/indestructible/hotelwood,
+/area/centcom/holding/cafedorms)
+"Q" = (
+/obj/structure/curtain,
+/obj/machinery/shower/directional/north,
+/turf/open/floor/material,
+/area/centcom/holding/cafedorms)
+"S" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/machinery/door/airlock{
+	id_tag = "dorm211";
+	name = "Lodge 1"
+	},
+/turf/open/indestructible/hotelwood,
+/area/centcom/holding/cafedorms)
+"V" = (
+/obj/item/clothing/under/color/random,
+/obj/item/clothing/under/color/jumpskirt/random,
+/obj/structure/closet/secure_closet/personal/cabinet,
+/turf/open/indestructible/hotelwood,
+/area/centcom/holding/cafedorms)
+"Z" = (
+/obj/structure/mineral_door/wood,
+/turf/open/indestructible/hotelwood,
+/area/centcom/holding/cafedorms)
+
+(1,1,1) = {"
+a
+a
+a
+S
+a
+"}
+(2,1,1) = {"
+a
+H
+I
+M
+a
+"}
+(3,1,1) = {"
+a
+L
+M
+w
+a
+"}
+(4,1,1) = {"
+a
+b
+M
+z
+a
+"}
+(5,1,1) = {"
+a
+m
+M
+u
+a
+"}
+(6,1,1) = {"
+a
+J
+M
+V
+a
+"}
+(7,1,1) = {"
+a
+a
+Z
+a
+a
+"}
+(8,1,1) = {"
+a
+i
+x
+y
+a
+"}
+(9,1,1) = {"
+a
+D
+n
+Q
+a
+"}
+(10,1,1) = {"
+a
+a
+a
+a
+a
+"}
