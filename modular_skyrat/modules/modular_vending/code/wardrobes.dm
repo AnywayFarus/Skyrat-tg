@@ -39,7 +39,7 @@
 		/obj/item/clothing/under/rank/cargo/tech/skyrat/casualman = 3,
 		/obj/item/clothing/suit/gorka/supply = 3,
 		/obj/item/clothing/suit/toggle/jacket/supply = 3,
-		/obj/item/clothing/glasses/hud/gun_permit = 5, //from Gun_Cargo module
+		/obj/item/clothing/glasses/hud/gun_permit = 5, //from company imports module
 	)
 
 	skyrat_contraband = list(
@@ -73,7 +73,6 @@
 
 /obj/machinery/vending/wardrobe/bar_wardrobe
 	skyrat_products = list(
-		/obj/item/storage/bag/money = 2,
 		/obj/item/storage/fancy/candle_box/vanilla = 1,
 		/obj/item/storage/fancy/candle_box/pear = 1,
 		/obj/item/storage/fancy/candle_box/amber = 1,
@@ -126,7 +125,7 @@
 		/obj/item/clothing/under/rank/security/detective/runner = 2,
 		/obj/item/clothing/suit/toggle/labcoat/highvis = 2,
 		/obj/item/clothing/under/rank/security/detective/cowboy = 2,
-		/obj/item/clothing/suit/det_suit/cowboyvest = 2,
+		/obj/item/clothing/suit/jacket/det_suit/cowboyvest = 2,
 	)
 
 /obj/machinery/vending/wardrobe/law_wardrobe
