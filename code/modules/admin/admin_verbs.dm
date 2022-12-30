@@ -69,6 +69,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/admin_cancel_shuttle, /*allows us to cancel the emergency shuttle, sending it back to centcom*/
 	/client/proc/admin_disable_shuttle, /*allows us to disable the emergency shuttle admin-wise so that it cannot be called*/
 	/client/proc/admin_enable_shuttle,  /*undoes the above*/
+	/client/proc/admin_hostile_environment, /*Allows admins to prevent the emergency shuttle from leaving, also lets admins clear hostile environments if theres one stuck*/
 	/client/proc/cmd_admin_direct_narrate, /*send text directly to a player with no padding. Useful for narratives and fluff-text*/
 	/client/proc/cmd_admin_world_narrate, /*sends text to all players with no padding*/
 	/client/proc/cmd_admin_local_narrate, /*sends text to all mobs within view of atom*/
@@ -137,6 +138,8 @@ GLOBAL_LIST_INIT(admin_verbs_fun, list(
 	/client/proc/admin_away,
 	/client/proc/add_mob_ability,
 	/client/proc/remove_mob_ability,
+	/client/proc/command_report_footnote,
+	/client/proc/delay_command_report,
 	/datum/admins/proc/station_traits_panel,
 	/client/proc/spawn_pollution, // SKYRAT EDIT ADDITION
 	/client/proc/spawn_liquid, // SKYRAT EDIT ADDITION
