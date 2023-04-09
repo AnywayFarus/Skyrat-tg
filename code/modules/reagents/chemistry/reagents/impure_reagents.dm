@@ -15,7 +15,7 @@
 	var/liver_damage = 0.5
 
 /datum/reagent/impurity/on_mob_life(mob/living/carbon/affected_mob, delta_time, times_fired)
-	var/obj/item/organ/internal/liver/L = affected_mob.getorganslot(ORGAN_SLOT_LIVER)
+	var/obj/item/organ/internal/liver/L = affected_mob.get_organ_slot(ORGAN_SLOT_LIVER)
 	if(!L)//Though, lets be safe
 		affected_mob.adjustToxLoss(1 * REM * delta_time, FALSE, required_biotype = affected_biotype)//Incase of no liver!
 		return ..()
@@ -49,6 +49,7 @@
 	taste_description = "an awful, strongly chemical taste"
 	color = "#270d03"
 	glass_price = DRINK_PRICE_HIGH
+	fallback_icon = 'icons/obj/drinks/drink_effects.dmi'
 	fallback_icon_state = "failed_reaction_fallback"
 
 // Unique

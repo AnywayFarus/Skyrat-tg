@@ -1,6 +1,21 @@
+/// Dynamically calculate nightshift brightness. How TG does it is painful to modify.
+#define NIGHTSHIFT_LIGHT_MODIFIER 0.15
+#define NIGHTSHIFT_COLOR_MODIFIER 0.10
+
+/atom
+	light_power = 1.25
+
 /obj/machinery/light
 	icon = 'modular_skyrat/modules/aesthetics/lights/icons/lighting.dmi'
 	overlay_icon = 'modular_skyrat/modules/aesthetics/lights/icons/lighting_overlay.dmi'
+	brightness = 5.5
+	bulb_colour = LIGHT_COLOR_FAINT_BLUE
+	bulb_power = 1.15
+	nightshift_light_color = null // Let the dynamic night shift color code handle this.
+	bulb_low_power_colour = LIGHT_COLOR_DARK_BLUE
+	bulb_low_power_brightness_mul = 0.45
+	bulb_low_power_pow_min = 0.4
+	bulb_major_emergency_brightness_mul = 1 // don't dim in an emergency, why is that a thing
 	var/maploaded = FALSE //So we don't have a lot of stress on startup.
 	var/turning_on = FALSE //More stress stuff.
 	var/constant_flickering = FALSE // Are we always flickering?
@@ -14,19 +29,34 @@
 	turning_on = FALSE
 	if(!on)
 		return
-	var/BR = brightness
-	var/PO = bulb_power
-	var/CO = bulb_colour
+	var/new_brightness = brightness
+	var/new_power = bulb_power
+	var/new_color = bulb_colour
 	if(color)
-		CO = color
+		new_color = color
 	if (firealarm)
-		CO = bulb_emergency_colour
+		new_color = bulb_emergency_colour
 	else if (nightshift_enabled)
-		BR = nightshift_brightness
-		PO = nightshift_light_power
-		if(!color)
-			CO = nightshift_light_color
-	var/matching = light && BR == light.light_range && PO == light.light_power && CO == light.light_color
+		new_brightness -= new_brightness * NIGHTSHIFT_LIGHT_MODIFIER
+		new_power -= new_power * NIGHTSHIFT_LIGHT_MODIFIER
+		if(!color && nightshift_light_color)
+			new_color = nightshift_light_color
+		else if(color) // In case it's spraypainted.
+			new_color = color
+		else // Adjust light values to be warmer. I doubt caching would speed this up by any worthwhile amount, as it's all very fast number and string operations.
+			// Convert to numbers for easier manipulation.
+			var/red = GETREDPART(bulb_colour)
+			var/green = GETGREENPART(bulb_colour)
+			var/blue = GETBLUEPART(bulb_colour)
+
+			red += round(red * NIGHTSHIFT_COLOR_MODIFIER)
+			green -= round(green * NIGHTSHIFT_COLOR_MODIFIER * 0.3)
+			red = clamp(red, 0, 255) // clamp to be safe, or you can end up with an invalid hex value
+			green = clamp(green, 0, 255)
+			blue = clamp(blue, 0, 255)
+			new_color = "#[num2hex(red, 2)][num2hex(green, 2)][num2hex(blue, 2)]"  // Splice the numbers together and turn them back to hex.
+
+	var/matching = light && new_brightness == light.light_range && new_power == light.light_power && new_color == light.light_color
 	if(!matching)
 		switchcount++
 		if( prob( min(60, (switchcount**2)*0.01) ) )
@@ -34,7 +64,7 @@
 				burn_out()
 		else
 			use_power = ACTIVE_POWER_USE
-			set_light(BR, PO, CO)
+			set_light(new_brightness, new_power, new_color)
 			if(play_sound)
 				playsound(src.loc, 'modular_skyrat/modules/aesthetics/lights/sound/light_on.ogg', 65, 1)
 
@@ -104,3 +134,6 @@
 		balloon_alert(user, "ballast repaired!")
 		return TOOL_ACT_TOOLTYPE_SUCCESS
 	return ..()
+
+#undef NIGHTSHIFT_LIGHT_MODIFIER
+#undef NIGHTSHIFT_COLOR_MODIFIER
