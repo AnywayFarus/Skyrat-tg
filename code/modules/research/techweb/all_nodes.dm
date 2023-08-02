@@ -1308,6 +1308,12 @@
 		"science_hud_projector",
 		"permit_glasses",
 		"nifsoft_money_sense",
+		"nifsoft_hud_kit",
+		"nifsoft_hud_science",
+		"nifsoft_hud_medical",
+		"nifsoft_hud_security",
+		"nifsoft_hud_diagnostic",
+		"nifsoft_hud_cargo",
 		//SKYRAT EDIT END - RESEARCH DESIGNS
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
@@ -1758,6 +1764,12 @@
 		"mod_storage_expanded",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3500)
+
+/datum/techweb_node/mod_advanced_engineering/New()
+	if(HAS_TRAIT(SSstation, STATION_TRAIT_RADIOACTIVE_NEBULA)) //we'll really need the rad protection modsuit module
+		starting_node = TRUE
+
+	return ..()
 
 /datum/techweb_node/mod_medical
 	id = "mod_medical"
@@ -2418,7 +2430,9 @@
 	description = "Cutting edge fishing advancements."
 	prereq_ids = list("base")
 	design_ids = list(
-		"fishing_rod_tech"
+		"fishing_rod_tech",
+		"stabilized_hook",
+		"fish_analyzer",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	hidden = TRUE
