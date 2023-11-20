@@ -295,7 +295,7 @@
 
 /obj/item/defibrillator/compact/combat
 	name = "combat defibrillator"
-	desc = "A belt-equipped blood-red defibrillator. Can revive through thick clothing, has an experimental self-recharging battery, and can be utilized in combat via applying the paddles in a disarming or aggressive manner."
+	desc = "A belt-equipped blood-red defibrillator. Can revive through thick clothing, has an experimental self-recharging battery, and can be utilized as a weapon via applying the paddles while in a combat stance."
 	icon_state = "defibcombat" //needs defib inhand sprites
 	inhand_icon_state = null
 	worn_icon_state = "defibcombat"
@@ -322,7 +322,7 @@
 
 /obj/item/defibrillator/compact/combat/loaded/nanotrasen
 	name = "elite Nanotrasen defibrillator"
-	desc = "A belt-equipped state-of-the-art defibrillator. Can revive through thick clothing, has an experimental self-recharging battery, and can be utilized in combat via applying the paddles in a disarming or aggressive manner."
+	desc = "A belt-equipped state-of-the-art defibrillator. Can revive through thick clothing, has an experimental self-recharging battery, and can be utilized as a weapon via applying the paddles while in a combat stance."
 	icon_state = "defibnt" //needs defib inhand sprites
 	inhand_icon_state = null
 	worn_icon_state = "defibnt"
@@ -578,7 +578,7 @@
 	do_cancel()
 
 /obj/item/shockpaddles/proc/do_help(mob/living/carbon/H, mob/living/user)
-	var/target_synthetic = (user.mob_biotypes & MOB_ROBOTIC) // SKYRAT EDIT ADDITION BEGIN - SYNTH REVIVAL
+	var/target_synthetic = (H.mob_biotypes & MOB_ROBOTIC) // SKYRAT EDIT ADDITION BEGIN - SYNTH REVIVAL
 	if (target_synthetic)
 		to_chat(user, span_boldwarning("[H] is a synthetic lifeform! This defibrillator probably isn't calibrated to revive [H.p_them()] properly and could have some serious consequences! \
 		[span_warning("You might want to [span_blue("surgically revive [H.p_them()]")]...")]"))
