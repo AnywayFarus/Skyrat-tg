@@ -155,7 +155,6 @@
 
 	if(!room_number)
 		return
-
 	access_id += "[room_number]"
 
 
@@ -210,6 +209,7 @@
 
 /obj/item/key_card/hotel_room/one
 	color = "#E0E000"
+	custom_price = 100
 	room_number = 1
 
 /obj/machinery/door/airlock/keyed/hotel_room/one
@@ -218,6 +218,7 @@
 
 
 /obj/item/key_card/hotel_room/two
+	custom_price = 210
 	color = "#C4004E"
 	room_number = 2
 
@@ -227,6 +228,7 @@
 
 
 /obj/item/key_card/hotel_room/three
+	custom_price = 325
 	color = "#00C074"
 	room_number = 3
 

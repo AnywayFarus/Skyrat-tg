@@ -173,6 +173,24 @@
 
 	icon_state = "[base_icon_state][powered() ? null : "-off"]"
 
+/obj/machinery/vending/hotel_keys
+	name = "Hotel Rooms"
+	desc = "A vending machine with rent keys"
+	icon_state = "custom"
+	base_icon_state = "custom"
+	icon = 'icons/obj/machines/vending.dmi'
+	light_mask = "custom-light-mask"
+	age_restrictions = TRUE
+	product_ads = "Low price!;Please, rent a room!"
+	vend_reply = "You can live here for 1 day!"
+
+	//STUFF SOLD HERE//
+	products = list(
+				/obj/item/key_card/hotel_room/one = 1,
+				/obj/item/key_card/hotel_room/two = 1,
+				/obj/item/key_card/hotel_room/three = 1
+	)
+
 //Refill item
 /obj/item/vending_refill/lustwish
 	machine_name = "LustWish"
