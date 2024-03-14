@@ -11,6 +11,8 @@
 	health = 20
 	maxHealth = 20
 	speed = 2
+	light_power = 0.8
+	light_color = "#99ccff"
 	pass_flags = PASSMOB | PASSFLAPS
 	status_flags = (CANPUSH | CANSTUN)
 	ai_controller = /datum/ai_controller/basic_controller/bot/medbot
@@ -399,6 +401,7 @@
 	health = 40
 	maxHealth = 40
 	maints_access_required = list(ACCESS_SYNDICATE)
+	bot_mode_flags = parent_type::bot_mode_flags & ~BOT_MODE_REMOTE_ENABLED
 	radio_key = /obj/item/encryptionkey/syndicate
 	radio_channel = RADIO_CHANNEL_SYNDICATE
 	damage_type_healer = HEAL_ALL_DAMAGE

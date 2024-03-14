@@ -29,6 +29,13 @@
 	description = "WELCOME TO CLOWN PLANET! HONK HONK HONK etc.!"
 	suffix = "lavaland_biodome_clown_planet.dmm"
 
+/datum/map_template/ruin/lavaland/lizgas
+	name = "The Lizard's Gas(Lava)"
+	id = "lizgas2"
+	description = "A recently opened gas station from the Lizard's Gas franchise."
+	suffix = "lavaland_surface_gas.dmm"
+	allow_duplicates = FALSE
+
 /datum/map_template/ruin/lavaland/cube
 	name = "The Wishgranter Cube"
 	id = "wishgranter-cube"
@@ -286,6 +293,16 @@
 	suffix = "lavaland_battle_site.dmm"
 	allow_duplicates = TRUE
 	cost = 3
+
+/datum/map_template/ruin/lavaland/vent
+	name = "Ore Vent"
+	id = "ore_vent"
+	description = "A vent that spews out ore. Seems to be a natural phenomenon."
+	suffix = "lavaland_surface_ore_vent.dmm"
+	allow_duplicates = TRUE
+	cost = 0
+	mineral_cost = 1
+	always_place = TRUE
 
 /datum/map_template/ruin/lavaland/watcher_grave
 	name = "Watchers' Grave"
