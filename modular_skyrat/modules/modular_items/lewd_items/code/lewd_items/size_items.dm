@@ -107,7 +107,7 @@
 		return TRUE
 
 	apply_size(original_size)
-	return FALSE
+	return TRUE
 
 /// Adjusts the sprite size of the parent mob based off `size_to_apply`.
 /datum/component/temporary_size/proc/apply_size(size_to_apply)

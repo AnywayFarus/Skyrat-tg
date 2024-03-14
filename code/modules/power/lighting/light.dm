@@ -126,10 +126,10 @@
 	switch(fitting)
 		if("tube")
 			if(prob(2))
-				break_light_tube(TRUE)
+				//break_light_tube(TRUE)
 		if("bulb")
 			if(prob(5))
-				break_light_tube(TRUE)
+				//break_light_tube(TRUE)
 #endif
 	update(trigger = FALSE)
 
